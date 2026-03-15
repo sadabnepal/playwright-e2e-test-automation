@@ -10,8 +10,8 @@
 Clone Repository
 
 ```bash
-git clone https://github.com/sadabnepal/playwright-test-ui-api.git
-cd playwright-test-ui
+git clone https://github.com/sadabnepal/playwright-e2e-test-automation.git &&
+cd playwright-e2e-test-automation
 ```
 
 Install Packages
