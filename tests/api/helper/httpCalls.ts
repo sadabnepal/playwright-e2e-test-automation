@@ -19,7 +19,7 @@ export async function postRestApiRequest(baseUrl: string, endpoint: string, payl
 export async function queryGraphQl(baseUrl: string, query: string | object) {
     const apiContext = await request.newContext({ timeout: 30000 });
     const response = apiContext.post(baseUrl, {
-        data: { query: query }
+        data: query
     });
     return response;
 }

@@ -16,14 +16,18 @@ export const createPostSchemaResponse = z.object({
 }).strict();
 
 
-export const graphQlResponseSchema = z.object({
+export const graphCharactersSchema = z.object({
     data: z.object({
         characters: z.object({
             info: z.object({
                 count: z.number()
             }),
             results: z.array(z.object({
-                name: z.string()
+                id: z.string(),
+                name: z.string(),
+                status: z.string(),
+                gender: z.string(),
+                species: z.string()
             }))
         })
     })

@@ -1,10 +1,34 @@
-export const queryRickAndMortyDetails = `query Query {
-                    characters(page: 2, filter: {name: "Morty"}) {
-                        info {
-                        count
-                        }
-                        results {
-                        name
-                        }
-                    }
-                }`;
+export const queryFilterCharacterByName = (name: string) => ({
+    query: `query Query($name: String) {
+        characters(filter: {name: $name}) {
+            info {
+                count
+            }
+            results {
+                id
+                name
+                status
+                gender
+                species
+            }
+        }
+    }`,
+    variables: { name }
+});
+
+export const getAllCharacters = () => ({
+    query: `query Query {
+        characters {
+            info {
+                count
+            }
+            results {
+                id
+                name
+                status
+                gender
+                species
+            }
+        }
+    }`
+});
