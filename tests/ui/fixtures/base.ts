@@ -1,9 +1,9 @@
-import AdminPage from '@pages/admin.page';
-import EmployeePage from '@pages/employee.page';
-import LandingPage from '@pages/landing.page';
-import LoginPage from '@pages/login.page';
-import NavigatePage from '@pages/navigate.page';
-import { test as base } from '@playwright/test';
+import AdminPage from "@pages/admin.page";
+import EmployeePage from "@pages/employee.page";
+import LandingPage from "@pages/landing.page";
+import LoginPage from "@pages/login.page";
+import NavigatePage from "@pages/navigate.page";
+import { test as base } from "@playwright/test";
 
 type PageOption = {
     landingPage: LandingPage;
@@ -11,7 +11,7 @@ type PageOption = {
     navigatePage: NavigatePage;
     employeePage: EmployeePage;
     adminPage: AdminPage;
-}
+};
 
 export const test = base.extend<PageOption>({
     landingPage: async ({ page }, use) => {
@@ -30,4 +30,4 @@ export const test = base.extend<PageOption>({
         await use(new NavigatePage(page));
     }
 });
-export { expect } from '@playwright/test';
+export { expect } from "@playwright/test";

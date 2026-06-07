@@ -1,11 +1,11 @@
-import { faker } from '@faker-js/faker';
-import { ICreateUser } from '@ui/interface/user';
+import { faker } from "@faker-js/faker";
+import { ICreateUser } from "@ui/interface/user";
 
 export const adminUserData = (existingUser: string): ICreateUser => {
     return {
-        role: 'Admin',
+        role: "Admin",
         name: existingUser,
-        status: 'Enabled',
+        status: "Enabled",
         username: faker.internet.username(),
         password: faker.internet.password()
     };

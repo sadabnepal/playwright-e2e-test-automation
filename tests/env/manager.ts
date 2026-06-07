@@ -1,7 +1,7 @@
-import { config } from 'dotenv';
-import { join } from 'path';
+import { config } from "dotenv";
+import { join } from "path";
 
-config({ path: join(process.cwd(), '.env') });
+config({ path: join(process.cwd(), ".env") });
 
 export const localEnv = {
     USERNAME: process.env.USERNAME as string,
@@ -9,7 +9,7 @@ export const localEnv = {
 };
 
 
-config({ path: join(process.cwd(), 'tests', 'env', `${process.env.ENV || 'dev'}.env`) });
+config({ path: join(process.cwd(), "tests", "env", `${process.env.ENV || "dev"}.env`) });
 
 export const env = {
     APP_URL: process.env.APP_URL as string,

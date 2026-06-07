@@ -1,4 +1,4 @@
-import { request } from '@playwright/test';
+import { request } from "@playwright/test";
 
 
 export async function getRestApiRequest(baseUrl: string, endpoint: string) {

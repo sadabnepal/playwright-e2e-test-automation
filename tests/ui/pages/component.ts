@@ -1,6 +1,6 @@
-import { Page } from '@playwright/test';
+import { Page } from "@playwright/test";
 
-export const toastMessage = (page: Page) => page.locator('.oxd-text--toast-message');
+export const toastMessage = (page: Page) => page.locator(".oxd-text--toast-message");
 
 export function getInputLocatorByLabel(label: string) {
     return `//label[text()='${label}']/parent::*/following-sibling::*//input`;
@@ -11,5 +11,5 @@ export function getDropdownLocatorByLabel(label: string) {
 };
 
 export function getTableRows(page: Page) {
-    return page.getByRole('table').getByRole('rowgroup').nth(1);
+    return page.getByRole("table").getByRole("rowgroup").nth(1);
 }

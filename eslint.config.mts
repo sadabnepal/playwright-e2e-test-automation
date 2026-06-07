@@ -1,14 +1,22 @@
 import pluginJs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import playwright from 'eslint-plugin-playwright';
+import playwrightPlugin from 'eslint-plugin-playwright';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-    { files: ["tests/*.{js,,ts}"] },
+export default defineConfig([
     {
-        ignores: ["node_modules", "reports", "eslint.config.mjs"],
+        files: ['tests/**/*.{js,ts}'],
+    },
+    {
+        ignores: [
+            'node_modules/**',
+            'playwright-report/**',
+            'reports/**',
+            'test-results/**',
+            '.DS_Store'
+        ]
     },
     {
         languageOptions: {
@@ -20,28 +28,31 @@ export default [
         }
     },
     pluginJs.configs.recommended,
-    ...tseslint.configs.recommended,
+    tseslint.configs.recommended,
     {
         rules: {
-            "@typescript-eslint/no-misused-promises": "error",
-            "@typescript-eslint/no-floating-promises": "error"
+            '@typescript-eslint/no-misused-promises': 'error',
+            '@typescript-eslint/no-floating-promises': 'error'
         }
     },
     {
-        ...playwright.configs['flat/recommended'],
+        files: ['tests/api/**/*.ts', 'tests/web/**/*.ts'],
+        plugins: {
+            playwright: playwrightPlugin
+        },
         rules: {
-            ...playwright.configs['flat/recommended'].rules,
+            ...playwrightPlugin.configs['flat/recommended'].rules,
         }
     },
     {
+        files: ['tests/**/*.ts'],
         plugins: {
             '@stylistic': stylistic
         },
         rules: {
-            ...stylistic.configs['flat/recommended'],
             '@stylistic/quotes': [
                 'error',
-                'single',
+                'double',
                 {
                     avoidEscape: true,
                     allowTemplateLiterals: "always"
@@ -54,14 +65,14 @@ export default [
                     SwitchCase: 1
                 }
             ],
-            'semi': [
+            '@stylistic/semi': [
                 'error',
                 'always',
                 {
                     omitLastInOneLineBlock: true,
-                    omitLastInOneLineClassBody: true,
+                    omitLastInOneLineClassBody: true
                 }
             ]
         }
     }
-];
+]);

@@ -1,6 +1,6 @@
-import { faker } from '@faker-js/faker';
-import { ICreateEmployee } from '@ui/interface/employee';
-import { UserStatus } from '@ui/interface/user';
+import { faker } from "@faker-js/faker";
+import { ICreateEmployee } from "@ui/interface/employee";
+import { UserStatus } from "@ui/interface/user";
 
 export const createEmployeeData = (status: UserStatus): ICreateEmployee => {
     return {

@@ -1,4 +1,4 @@
-import { UserStatus } from './user';
+import { UserStatus } from "./user";
 
 export interface ICreateEmployee {
     employeeDetails: {
