@@ -5,7 +5,9 @@
     },
     "cSpell.words": [
         "DOTENV",
-        "Ortoni"
+        "mydemoapp",
+        "Ortoni",
+        "saucelabs"
     ],
-    "js/ts.preferences.quoteStyle": "single"
+    "js/ts.preferences.quoteStyle": "double"
 }

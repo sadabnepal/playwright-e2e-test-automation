@@ -65,3 +65,29 @@ check script section of package.json for more test commands
 
 ## Sample Report:
 ![Report](./samples/report.png)
+
+
+
+## version conflict with mobilewright (playwright under the hood)
+run following command to check what of playwright is used by mobilewright
+```
+cat node_modules/@mobilewright/test/node_modules/@playwright/test/package.json | grep '"version"'
+```
+
+in package.json below section update the same version
+```
+"overrides": {
+    "@playwright/test": "1.58.2"
+}
+```
+
+clean install
+```
+rm -rf node_modules package-lock.json
+npm install
+```
+
+verify only one copy exists
+```
+find node_modules -name "package.json" -path "*/@playwright/test/package.json" | xargs grep '"version"'
+```

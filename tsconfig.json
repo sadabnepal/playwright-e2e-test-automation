@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "types": [
+      "node"
+    ],
     "target": "ESNext",
     "module": "ESNext",
     "resolveJsonModule": true,
@@ -39,9 +42,7 @@
   },
   "include": [
     "tests/**/*",
-    "eslint.config.mts",
-    "mobilewright.config.ts",
-    "playwright.config.ts"
+    "eslint.config.mts"
   ],
   "exclude": [
     "node_modules",

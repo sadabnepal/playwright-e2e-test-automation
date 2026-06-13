@@ -2,13 +2,14 @@
   "name": "playwright-test-ui-api",
   "type": "module",
   "scripts": {
-    "test": "npx playwright test",
-    "test:ui": "npx playwright test --ui",
-    "test:headed": "npx playwright test --headed",
-    "test:chromium": "npx playwright test --project=chromium",
-    "test:webkit": "npx playwright test --project=webkit",
-    "test:api:rest": "npx playwright test --project=restApi",
-    "test:api:graphql": "npx playwright test --project=graphqlApi",
+    "test:headed": "npx playwright test --headed --config tests/ui/playwright.config.ts",
+    "test:chromium": "npx playwright test --project=chromium --config tests/ui/playwright.config.ts",
+    "test:webkit": "npx playwright test --project=webkit --config tests/ui/playwright.config.ts",
+    "test:api": "npx playwright test --config tests/api/playwright.config.ts",
+    "test:api:rest": "npx playwright test --project=restApi --config tests/api/playwright.config.ts",
+    "test:api:graphql": "npx playwright test --project=graphqlApi --config tests/api/playwright.config.ts",
+    "test:ios": "mobilewright test --config tests/mobile/mobilewright.config.ts --project=ios catalog.spec.ts",
+    "test:android": "mobilewright test --config tests/mobile/mobilewright.config.ts --project=android",
     "lint": "tsc --noEmit && eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
@@ -24,7 +25,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@faker-js/faker": "^10.4.0",
-    "@playwright/test": "^1.60.0",
+    "@mobilewright/test": "^0.0.41",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^25.9.2",
     "dotenv": "^17.4.2",
@@ -33,9 +34,13 @@
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "jiti": "^2.7.0",
+    "mobilewright": "^0.0.41",
     "npm-check-updates": "^22.2.3",
     "ortoni-report": "^4.0.9",
     "typescript-eslint": "^8.60.1",
     "zod": "^4.4.3"
+  },
+  "overrides": {
+    "@playwright/test": "1.58.2"
   }
 }
