@@ -34,6 +34,8 @@ npm run test:chromium    [ Run UI tests in Chromium ]
 npm run test:webkit      [ Run UI tests in Webkit ]
 npm run test:api:rest    [ Run API tests ]
 npm run test:api:graphql [ Run API tests ]
+npm run test:ios         [ Run ios mobile tests ]
+npm run test:android     [ Run android mobile tests ]
 ```
 
 Code Analyze and Fix
