@@ -1,0 +1,15 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "POST",
+                "path": "/graphql"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "inject": "<%- stringify(filename, 'helper/graphql.js') %>"
+        }
+    ]
+}
