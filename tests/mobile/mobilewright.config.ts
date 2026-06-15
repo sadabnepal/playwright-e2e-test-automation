@@ -4,7 +4,7 @@ import { join } from "path";
 export default defineConfig({
     testDir: join(process.cwd(), "tests", "mobile", "specs"),
     reporter: [
-        ["html", { outputFolder: join(process.cwd(), "reports", "mobile", "playwright-report") }],
+        ["html", { outputFolder: join(process.cwd(), "reports", "mobile", "playwright-report"), open: process.env.CI ? "never" : "on-failure" }],
     ],
     viewTree: "on-failure",
     projects: [

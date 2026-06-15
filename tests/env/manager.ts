@@ -8,8 +8,8 @@ export const localEnv = {
     PASSWORD: process.env.PASSWORD as string
 };
 
-
-config({ path: join(process.cwd(), "tests", "env", `${process.env.ENV || "dev"}.env`) });
+export const TEST_ENV = process.env.ENV || "sit";
+config({ path: join(process.cwd(), "tests", "env", `${TEST_ENV}.env`) });
 
 export const env = {
     APP_URL: process.env.APP_URL as string,

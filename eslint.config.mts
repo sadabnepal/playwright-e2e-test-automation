@@ -15,7 +15,8 @@ export default defineConfig([
             'playwright-report/**',
             'reports/**',
             'test-results/**',
-            '.DS_Store'
+            '.DS_Store',
+            "mocks/**/*.js"
         ]
     },
     {

@@ -6,3 +6,5 @@ node_modules/
 /ortoni-report/
 /reports/
 .DS_Store
+mb*.log
+mb.pid
