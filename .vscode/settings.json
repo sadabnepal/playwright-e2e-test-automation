@@ -1,13 +1,15 @@
 {
-    "editor.formatOnSave": true,
+    "[javascript][typescript][json][jsonc]": {
+        "editor.formatOnSave": true
+    },
     "editor.codeActionsOnSave": {
         "source.organizeImports": "always"
     },
+    "js/ts.preferences.quoteStyle": "double",
     "cSpell.words": [
         "DOTENV",
         "mydemoapp",
         "Ortoni",
         "saucelabs"
-    ],
-    "js/ts.preferences.quoteStyle": "double"
+    ]
 }

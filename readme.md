@@ -93,3 +93,10 @@ verify only one copy exists
 ```
 find node_modules -name "package.json" -path "*/@playwright/test/package.json" | xargs grep '"version"'
 ```
+
+
+## remove mobile setup if not required for the project
+```
+chmod +x remove-mobile.sh
+./remove-mobile.sh
+```

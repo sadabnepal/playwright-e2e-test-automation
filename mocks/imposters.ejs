@@ -1,0 +1,19 @@
+{
+    "imposters": [
+        {
+            "port": 4545,
+            "protocol": "http",
+            "recordRequest": false,
+            "name": "json placeholder api stub",
+            "defaultResponse": {
+                "statusCode": 404,
+                "body": {
+                    "error": "no matching route found"
+                }
+            },
+            "stubs": [
+                <%- include('stubs/jsonPlaceholder.json') %>
+            ]
+        }
+    ]
+}

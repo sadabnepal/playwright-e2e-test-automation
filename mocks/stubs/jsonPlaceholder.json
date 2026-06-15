@@ -1,0 +1,49 @@
+{
+    "predicates": [
+        {
+            "or": [
+                {
+                    "matches": {
+                        "method": "GET",
+                        "path": "/posts/[0-9]"
+                    }
+                },
+                {
+                    "equals": {
+                        "method": "GET",
+                        "path": "/posts"
+                    }
+                },
+                {
+                    "equals": {
+                        "method": "POST",
+                        "path": "/posts"
+                    }
+                },
+                {
+                    "matches": {
+                        "method": "PUT",
+                        "path": "/posts"
+                    }
+                },
+                {
+                    "matches": {
+                        "method": "PATCH",
+                        "path": "/posts"
+                    }
+                },
+                {
+                    "matches": {
+                        "method": "DELETE",
+                        "path": "/posts"
+                    }
+                }
+            ]
+        }
+    ],
+    "responses": [
+        {
+            "inject": "<%- stringify(filename, 'helper/router.js') %>"
+        }
+    ]
+}

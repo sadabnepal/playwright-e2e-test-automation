@@ -1,24 +1,6 @@
 import { defineConfig } from "@playwright/test";
-import { OrtoniReportConfig } from "ortoni-report";
 import { join } from "path";
 
-const reportConfig: OrtoniReportConfig = {
-    open: process.env.CI ? "never" : "on-failure",
-    folderPath: join("reports", "api", "ortoni-report"),
-    filename: "index.html",
-    title: "Playwright Test Result",
-    projectName: "Playwright Test",
-    testType: "Regression",
-    authorName: "Mohammad Sadab Saqib",
-    base64Image: true,
-    stdIO: true,
-    meta: {
-        project: "Playwright Test For Rest API and GraphQL API",
-        version: "26.0.0",
-        release: "Release.2026",
-        platform: process.platform,
-    }
-};
 
 export default defineConfig({
     testDir: "./specs",
@@ -27,8 +9,7 @@ export default defineConfig({
     retries: process.env.CI ? 2 : 0,
     workers: process.env.CI ? 1 : undefined,
     reporter: [
-        ["ortoni-report", reportConfig],
-        ["html", { outputFolder: join(process.cwd(), "reports", "api", "playwright-report"), open: process.env.CI ? "never" : "never" }],
+        ["html", { outputFolder: join(process.cwd(), "reports", "api", "playwright-report"), open: process.env.CI ? "never" : "on-failure" }],
     ],
     use: {
         trace: "on-first-retry",
