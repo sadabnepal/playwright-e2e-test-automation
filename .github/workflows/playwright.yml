@@ -6,7 +6,7 @@ on:
 jobs:
 
   ui-test:
-    timeout-minutes: 60
+    timeout-minutes: 3
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v5
