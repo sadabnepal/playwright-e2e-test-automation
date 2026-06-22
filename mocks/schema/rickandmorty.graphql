@@ -1,0 +1,24 @@
+type Character {
+    id: ID
+    name: String
+    status: String
+    gender: String
+    species: String
+}
+
+type Info {
+    count: Int
+}
+
+type Characters {
+    info: Info
+    results: [Character]
+}
+
+type Query {
+    characters(filter: FilterCharacter): Characters
+}
+
+input FilterCharacter {
+    name: String
+}

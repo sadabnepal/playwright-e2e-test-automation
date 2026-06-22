@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "Rick Sanchez",
+        "status": "Alive",
+        "gender": "Male",
+        "species": "Human"
+    },
+    {
+        "id": "2",
+        "name": "Morty Smith",
+        "status": "Alive",
+        "gender": "Male",
+        "species": "Human"
+    },
+    {
+        "id": "3",
+        "name": "Rick D. Sanchez",
+        "status": "Dead",
+        "gender": "Male",
+        "species": "Human"
+    }
+]

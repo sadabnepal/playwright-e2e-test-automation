@@ -14,6 +14,20 @@
             "stubs": [
                 <%- include('stubs/jsonPlaceholder.json') %>
             ]
+        },
+        {
+            "port": 4546,
+            "protocol": "http",
+            "name": "rick and morty graphql stub",
+            "defaultResponse": {
+                "statusCode": 404,
+                "body": { 
+                    "error": "no matching route found" 
+                }
+            },
+            "stubs": [
+                <%- include('stubs/graphql.json') %>
+            ]
         }
     ]
 }

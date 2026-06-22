@@ -45,6 +45,12 @@ function requestRouter(request) {
         return deletePostById(request);
     }
 
+    if (request.method === "POST" && request.path.endsWith("/graphql")) {
+        const { graphql } = require(join(process.cwd(), 'mocks', 'helper', 'graphql.js'));
+
+        return graphql(request);
+    }
+
     return {
         statusCode: 200,
         headers: {
