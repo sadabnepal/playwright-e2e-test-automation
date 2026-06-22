@@ -10,7 +10,7 @@ function inject(request) {
 
         const fixture = JSON.parse(
             fs.readFileSync(
-                path.join(__dirname, "../fixtures/characters.json"),
+                path.join(process.cwd(), "mocks/fixtures/characters.json"),
                 "utf8"
             )
         );
