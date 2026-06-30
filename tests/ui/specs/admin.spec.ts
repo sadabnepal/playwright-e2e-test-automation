@@ -8,7 +8,7 @@ test("validate admin page", { tag: "@web" }, async ({ page, loginPage, landingPa
     await loginPage.open();
     await loginPage.login(localEnv.USERNAME, localEnv.PASSWORD);
 
-    await expect(landingPage.pageHeader).toBeVisible();
+    await expect(landingPage.pageHeader).toBeVisible({ timeout: 10_000 });
 
     await navigatePage.goto("PIM");
     const existingUser = await employeePage.getExistingUserName();

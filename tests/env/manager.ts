@@ -14,5 +14,6 @@ config({ path: join(process.cwd(), "tests", "env", `${TEST_ENV}.env`) });
 export const env = {
     APP_URL: process.env.APP_URL as string,
     REST_URL: process.env.REST_URL as string,
-    GRAPHQL_URL: process.env.GRAPHQL_URL as string
+    GRAPHQL_URL: process.env.GRAPHQL_URL as string,
+    AUTH_BASED_APP_URL: process.env.AUTH_BASED_APP_URL as string
 };

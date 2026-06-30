@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "test:headed": "npx playwright test --headed --config tests/ui/playwright.config.ts",
+    "test:setup": "npx playwright test --project=setup --config tests/ui/playwright.config.ts",
     "test:chromium": "npx playwright test --project=chromium --config tests/ui/playwright.config.ts",
     "test:webkit": "npx playwright test --project=webkit --config tests/ui/playwright.config.ts",
     "test:api": "npx playwright test --config tests/api/playwright.config.ts",

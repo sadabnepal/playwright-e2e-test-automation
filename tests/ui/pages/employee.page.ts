@@ -20,13 +20,13 @@ class EmployeePage {
         await this.page.getByPlaceholder("First Name").fill(options.employeeDetails.firstName);
         await this.page.getByPlaceholder("Middle Name").fill(options.employeeDetails.middleName);
         await this.page.getByPlaceholder("Last Name").fill(options.employeeDetails.lastName);
-        await this.page.locator(getInputLocatorByLabel("Employee Id")).fill(options.employeeDetails.employeeId);
+        await getInputLocatorByLabel(this.page, "Employee Id").fill(options.employeeDetails.employeeId);
 
         if (options.loginDetails) {
             await this.page.locator(".oxd-switch-wrapper").click();
-            await this.page.locator(getInputLocatorByLabel("Username")).fill(options.loginDetails.username);
-            await this.page.locator(getInputLocatorByLabel("Password")).fill(options.loginDetails.password);
-            await this.page.locator(getInputLocatorByLabel("Confirm Password")).fill(options.loginDetails.password);
+            await getInputLocatorByLabel(this.page, "Username").fill(options.loginDetails.username);
+            await getInputLocatorByLabel(this.page, "Password").fill(options.loginDetails.password);
+            await getInputLocatorByLabel(this.page, "Confirm Password").fill(options.loginDetails.password);
             await this.page.getByText(options.loginDetails.status).click();
             await this.page.getByRole("button", { name: "Save" }).click();
         }

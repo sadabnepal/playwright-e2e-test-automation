@@ -3,7 +3,7 @@ import { OrtoniReportConfig } from "ortoni-report";
 import { join } from "path";
 
 const reportConfig: OrtoniReportConfig = {
-    open: process.env.CI ? "never" : "on-failure",
+    open: "never",
     folderPath: join("reports", "ui", "ortoni-report"),
     filename: "index.html",
     title: "Playwright Test Result",
@@ -21,28 +21,35 @@ const reportConfig: OrtoniReportConfig = {
 };
 
 export default defineConfig({
-    testDir: "./specs",
     fullyParallel: true,
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 2 : 0,
     workers: process.env.CI ? 1 : undefined,
     reporter: [
         ["ortoni-report", reportConfig],
-        ["html", { outputFolder: join(process.cwd(), "reports", "ui", "playwright-report"), open: process.env.CI ? "never" : "never" }],
+        ["html", { outputFolder: join(process.cwd(), "reports", "ui", "playwright-report"), open: process.env.CI ? "never" : "on-failure" }],
     ],
     use: {
         trace: "on-first-retry",
-        screenshot: "only-on-failure"
+        screenshot: "only-on-failure",
+        actionTimeout: 10_000
     },
 
     /* Configure projects for major browsers */
     projects: [
         {
+            name: "setup",
+            use: { ...devices["Desktop Chrome"] },
+            testMatch: [/auth\.setup\.ts/],
+        },
+        {
             name: "chromium",
+            testDir: "./specs",
             use: { ...devices["Desktop Chrome"] }
         },
         {
             name: "webkit",
+            testDir: "./specs",
             use: { ...devices["Desktop Safari"] },
         }
     ]

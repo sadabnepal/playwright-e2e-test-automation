@@ -18,6 +18,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium
+    - name: Setup auth
+      run: npm run test:setup
     - name: Run Playwright UI tests
       run: npm run test:chromium
     - uses: actions/upload-artifact@v6
